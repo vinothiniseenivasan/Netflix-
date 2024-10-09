@@ -1,12 +1,13 @@
+import Browse from './Components/Browse';
 
-import './App.css';
+import Body from './Components/Body';
 
 function App() {
   return (
-    <div className="text-3xl font-bold text-blue-500">
-      Let's build Netflix App
+    <div  className='bg-black'>
+       <Body />
     </div>
-  );
+  )
 }
 
 export default App;
