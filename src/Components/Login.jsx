@@ -1,6 +1,21 @@
+import { useState } from "react";
 import Header from "./Header";
 
 const Login = () =>{
+   
+
+     const [isSignIn , setIsSignIn] = useState(true);
+
+     function handleSignInPage()
+     {
+      console.log("handleSignInPage")
+
+      setIsSignIn(!isSignIn);
+
+     }
+
+
+
   return (
     <div  className="relative h-screen">
          <Header />
@@ -15,8 +30,18 @@ const Login = () =>{
         <form className="absolute  bg-black top-1/4  left-[40%] bg-opacity-80 z-10 flex flex-col w-1/4 p-8  h-auto ">
 
             <div className="text-white font-serif  text-3xl tracking-wider p-2 mt-3">
-                Sign In
+            {  (isSignIn) ? "Sign In" :  "Sign Up"   }
             </div>
+
+            {
+              (isSignIn === false) ? (
+                <input
+               type="text"
+               placeholder="Full Name"
+               className="m-2 p-3 mt-3 bg-gray-700 flex justify-center items-center text-white opacity-85"
+             />) : " "
+             
+            }
             <input
                type="text"
                placeholder="Email or Phone Number"
@@ -27,8 +52,9 @@ const Login = () =>{
                placeholder="Password"
               className="m-2 p-3 mt-3 bg-gray-700 flex justify-center items-center text-white opacity-85"
              />
+             {/* sign in button */}
              <button className="p-2 m-2  mt-6  bg-red-800 text-white flex items-center justify-center cursor-pointer">
-                  Sign in
+             {  (isSignIn) ? "Sign In" :  "Sign Up"   }
              </button>
 
              <div className="flex justify-between">
@@ -55,10 +81,19 @@ const Login = () =>{
              {/* New to Netflix sign up now */}
              <div className="flex justify-start  items-center m-2 p-2 text-white mt-12">
                 <div className="opacity-75">
-                      New to Netflix?
+
+                {  (isSignIn) ? " New to Netflix?" :  "Already a Member !"   }
+                    
                 </div>
-                <div className="hover:cursor-pointer hover:underline ml-1">
-                     Sign up now 
+                <div 
+                        className="hover:cursor-pointer hover:underline ml-1"
+                        onClick = {
+                          ()=>{
+                            handleSignInPage()
+                          }
+                         }
+                >
+                     {  (isSignIn) ? "Sign up now" :  "Sign In"   }
                 </div>
              </div>
 
