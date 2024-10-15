@@ -4,6 +4,7 @@ import { useRef, useState } from "react";
 import Header from "./Header";
 import { validateData } from "../Utils/validate";
 import { transformFromAstSync } from "@babel/core";
+import { useNavigate } from "react-router-dom";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../Utils/firebase";
 import {  signInWithEmailAndPassword } from "firebase/auth";
@@ -14,6 +15,10 @@ const Login = () => {
   const [passwordFromValidate, setPasswordFromValidate] = useState(" ");
   const [nameValidate, setNameValidate] = useState(" ");
   const [signUp, setSignUp] = useState(true);
+
+
+  //  useNavigate()
+  const navigate = useNavigate();
 
   const [errorMessage , setErrorMessage] = useState(false);
 
@@ -75,6 +80,8 @@ const Login = () => {
        // Signed in 
         const user = userCredential.user;
         console.log("user in SignInForm" , user)
+          // when user signed in or sign up nav to browse page
+          navigate("/Browse")
         // ...
       })
         .catch((error) => {
@@ -90,6 +97,9 @@ const Login = () => {
          .then((userCredential) => {
          // Signed up 
          const user = userCredential.user;
+
+           //  navigate to sign up page
+           navigate("Browse");
 
          console.log("user in signUp" ,user)
           // ...
@@ -129,7 +139,7 @@ const Login = () => {
           e.preventDefault();
           //  e.target.reset();
         }}
-        className="absolute  bg-black top-1/4  left-[40%] bg-opacity-80 z-10 flex flex-col w-1/4 p-8 h-auto"
+        className="absolute  bg-black top-1/4  left-[35%] bg-opacity-80 z-10 flex flex-col w-1/4 p-8 h-auto"
       >
         <div className="text-white font-serif text-3xl tracking-wider p-2 mt-3">
           {isSignIn ? "Sign In" : "Sign Up"}
