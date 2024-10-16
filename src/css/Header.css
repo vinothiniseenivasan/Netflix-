@@ -1,0 +1,36 @@
+/* 
+ */
+
+
+ /* Header.css */
+
+/* General dropdown item styles */
+.dropdown-item {
+    display: block;
+    width: 100%;
+    padding: var(--bs-dropdown-item-padding-y) var(--bs-dropdown-item-padding-x);
+    color: white; /* Ensures text color is white */
+    background-color: black; /* Ensures background is black */
+}
+
+/* Hover effect for dropdown items */
+.dropdown-item:hover {
+    background-color: blue !important; /* Use red background on hover */
+    color: white !important; /* Ensure text color stays white */
+}
+
+/* Specific for your dropdown menu */
+.dropdown-menu {
+    background-color: black; /* Ensures dropdown background is black */
+}
+
+/* Style for the dropdown toggle */
+.dropdown-toggle {
+    color: white; /* Ensure dropdown toggle text is white */
+    background-color: black; /* Ensure background is black */
+    border: none; /* Remove border for a clean look */
+}
+
+.custom-dropdown-toggle::after {
+    display: none !important;
+}

@@ -8,6 +8,7 @@ import { useNavigate } from "react-router-dom";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../Utils/firebase";
 import {  signInWithEmailAndPassword } from "firebase/auth";
+import { getAuth, updateProfile } from "firebase/auth";
 
 const Login = () => {
   const [isSignIn, setIsSignIn] = useState(true);
@@ -44,6 +45,7 @@ const Login = () => {
   }
 
   function signInButtonFormValidation() {
+    
     const checkSignIn = isSignIn;
 
     // Validate data based on Sign In or Sign Up
@@ -98,6 +100,20 @@ const Login = () => {
          // Signed up 
          const user = userCredential.user;
 
+
+        //  update user profile to get user Name and photoUrl
+        // displayname and photourl
+        
+        updateProfile(user, {
+          displayName: fullNameRef.current.value, photoURL: "https://cdn.vectorstock.com/i/1000x1000/55/60/female-user-vector-14585560.webp"
+        }).then(() => {
+          // Profile updated!
+          // ...
+        }).catch((error) => {
+          // An error occurred
+          // ...
+        });
+
            //  navigate to sign up page
            navigate("Browse");
 
@@ -139,7 +155,7 @@ const Login = () => {
           e.preventDefault();
           //  e.target.reset();
         }}
-        className="absolute  bg-black top-1/4  left-[35%] bg-opacity-80 z-10 flex flex-col w-1/4 p-8 h-auto"
+        className="absolute  bg-black top-1/4  left-[34%] bg-opacity-80 z-10 flex flex-col w-1/4 p-8 h-auto"
       >
         <div className="text-white font-serif text-3xl tracking-wider p-2 mt-3">
           {isSignIn ? "Sign In" : "Sign Up"}
