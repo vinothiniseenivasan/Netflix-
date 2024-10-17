@@ -13,9 +13,9 @@ import { useSelector } from 'react-redux';
 
 const Header = () =>{
 
-
+    // Get the information from redux store by using useSelector
     const userInformation = useSelector((store)=> store.user);
-    console.log("userInformation" ,userInformation)
+    // console.log("userInformation" ,userInformation)
 
   const navigate = useNavigate();
     function handleSignOut()
@@ -43,31 +43,39 @@ const Header = () =>{
 
 
       
-
-        {/* user account image $&&  signout btn */}
+          {
+          (userInformation && (
+        
         <div className="flex items-center mr-12">
+            {/* user account image $&&  signout btn */}
                 
                
                 {/* Dropdown */}
                 <Dropdown >
                     {/* <Dropdown.Toggle variant="secondary" id="dropdown-basic" className=" flex items-center w-full"> */}
-                    <Dropdown.Toggle variant="secondary" id="dropdown-basic" className="dropdown-toggle flex items-center" bsPrefix="custom-dropdown-toggle">
-                     <div className='flex items-center'>
-
+                    <Dropdown.Toggle variant="secondary" id="dropdown-basic" className="dropdown-toggle flex items-center " bsPrefix="custom-dropdown-toggle">
                     
+                    <div className='flex items-center'>
+                           <img
+                          //  url of  dropdown head img => its contain manage user and tranfer account and  sign out from netflix
+      
+                           src="https://occ-0-8003-64.1.nflxso.net/dnm/api/v6/vN7bi_My87NPKvsBoib006Llxzg/AAAABTZ2zlLdBVC05fsd2YQAR43J6vB1NAUBOOrxt7oaFATxMhtdzlNZ846H3D8TZzooe2-FT853YVYs8p001KVFYopWi4D4NXM.png?r=229"
+                           className="w-7 h-7 cursor-pointer "
+                           alt="user-account" />
+      
+                           <span className="ml-2">▼</span>
+                     </div>
+
+                     {/* <span className='flex'>
                      <img
-                    //  url of  dropdown head img 
+                    //  url of  dropdown head img => its contain manage user and tranfer account and  sign out from netflix
 
                      src={userInformation !== null ? (userInformation?.photoURL) :("https://occ-0-8003-64.1.nflxso.net/dnm/api/v6/vN7bi_My87NPKvsBoib006Llxzg/AAAABTZ2zlLdBVC05fsd2YQAR43J6vB1NAUBOOrxt7oaFATxMhtdzlNZ846H3D8TZzooe2-FT853YVYs8p001KVFYopWi4D4NXM.png?r=229")}
                      className="w-7 h-7 cursor-pointer "
 
-                    //  src={userInformation?.photoURL ? userInformation.photoURL : "https://..."}
-
-                  
+                   
                      alt="user-account" />
-
-                     <span className="ml-2">▼</span>
-                     </div>
+                     </span> */}
                   
                     </Dropdown.Toggle>
 
@@ -166,6 +174,7 @@ const Header = () =>{
 
 
         </div>
+        ))}
         
        
         

@@ -8,7 +8,9 @@ import { useNavigate } from "react-router-dom";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../Utils/firebase";
 import {  signInWithEmailAndPassword } from "firebase/auth";
-import { getAuth, updateProfile } from "firebase/auth";
+import {  updateProfile } from "firebase/auth";
+import { useDispatch } from "react-redux";
+import { addUser } from "../Utils/userSlice";
 
 const Login = () => {
   const [isSignIn, setIsSignIn] = useState(true);
@@ -29,6 +31,9 @@ const Login = () => {
   const emailRef = useRef(null);
   const passwordRef = useRef(null);
   const fullNameRef = useRef(null);
+
+  // dispatch
+  const dispatch =useDispatch();
 
   let message = null;
 
@@ -84,7 +89,7 @@ const Login = () => {
         console.log("user in SignInForm" , user)
           // when user signed in or sign up nav to browse page
           navigate("/Browse")
-        // ...
+        
       })
         .catch((error) => {
           const errorCode = error.code;
@@ -101,21 +106,41 @@ const Login = () => {
          const user = userCredential.user;
 
 
+         const {uid , displayName , email, photoURL} = auth.currentUser;
+         //  addUser dispatch an action
+          dispatch(addUser(
+             {
+                 uid : uid ,
+                 displayName : displayName,
+                 email :email ,
+                 photoURL :photoURL
+
+             }
+         ))
+
+
         //  update user profile to get user Name and photoUrl
         // displayname and photourl
         
         updateProfile(user, {
-          displayName: fullNameRef.current.value, photoURL: "https://cdn.vectorstock.com/i/1000x1000/55/60/female-user-vector-14585560.webp"
+
+          
+          displayName: fullNameRef.current.value, 
+          photoURL: "https://cdn.vectorstock.com/i/1000x1000/55/60/female-user-vector-14585560.webp"
         }).then(() => {
-          // Profile updated!
-          // ...
+          
+           //  navigate to browse page to search films
+           navigate("Browse");
+
+
+
+         
         }).catch((error) => {
           // An error occurred
-          // ...
+        
         });
 
-           //  navigate to sign up page
-           navigate("Browse");
+          
 
          console.log("user in signUp" ,user)
           // ...
