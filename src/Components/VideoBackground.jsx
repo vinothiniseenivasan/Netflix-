@@ -1,7 +1,12 @@
 import React, { useEffect } from 'react';
 import { TMDB_API_OPTIONS } from '../Utils/constant';
+import { setDoc } from 'firebase/firestore/lite';
+import { useState } from 'react';
 
 const VideoBackground = ({ movieId }) => {
+
+
+     const [trailerKey ,setTrailerKey] = useState(null);
 
 
  async  function getMovieVideos()
@@ -25,7 +30,8 @@ const VideoBackground = ({ movieId }) => {
   //  there is a case no trailor video in that case just take first video which has any type
  const firstTrailorType  = ( filterMovieTrailorVideos.length === 0) ? jsonInfo.results[0] : filterMovieTrailorVideos[0];
 
- console.log("firstTrailorType" ,firstTrailorType)
+ console.log("firstTrailorType" ,firstTrailorType.key);
+ setTrailerKey(firstTrailorType.key);
 
   }
 
@@ -42,7 +48,7 @@ const VideoBackground = ({ movieId }) => {
       // 1st way is using useState
       // 2 nd way is using redux store
 
-       src="https://www.youtube.com/embed/VUCNBAmse04?si=YGOAe3X2HWYm5uAc"
+       src={`https://www.youtube.com/embed/${trailerKey}?si=YGOAe3X2HWYm5uAc`}
         title="YouTube video player"
         
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin"
