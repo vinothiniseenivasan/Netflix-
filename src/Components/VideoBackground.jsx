@@ -2,11 +2,16 @@ import React, { useEffect } from 'react';
 import { TMDB_API_OPTIONS } from '../Utils/constant';
 import { setDoc } from 'firebase/firestore/lite';
 import { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { addGetTrailerKey } from '../Utils/movieSlice';
 
 const VideoBackground = ({ movieId }) => {
 
 
-     const [trailerKey ,setTrailerKey] = useState(null);
+      const dispatch = useDispatch();
+
+       const trailerKey = useSelector(store => store?.movies?.getMovieVideos);
+      //  console.log("trailerKey" ,trailerKey)
 
 
  async  function getMovieVideos()
@@ -31,7 +36,8 @@ const VideoBackground = ({ movieId }) => {
  const firstTrailorType  = ( filterMovieTrailorVideos.length === 0) ? jsonInfo.results[0] : filterMovieTrailorVideos[0];
 
  console.log("firstTrailorType" ,firstTrailorType.key);
- setTrailerKey(firstTrailorType.key);
+//  dispatch an action to store ket of trailervideo
+ dispatch(addGetTrailerKey(firstTrailorType.key));
 
   }
 
