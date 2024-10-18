@@ -3,8 +3,8 @@
 import { useRef, useState } from "react";
 import Header from "./Header";
 import { validateData } from "../Utils/validate";
-import { transformFromAstSync } from "@babel/core";
-import { useNavigate } from "react-router-dom";
+// import { transformFromAstSync } from "@babel/core";
+
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../Utils/firebase";
 import {  signInWithEmailAndPassword } from "firebase/auth";
@@ -20,8 +20,7 @@ const Login = () => {
   const [signUp, setSignUp] = useState(true);
 
 
-  //  useNavigate()
-  const navigate = useNavigate();
+  
 
   const [errorMessage , setErrorMessage] = useState(false);
 
@@ -87,8 +86,7 @@ const Login = () => {
        // Signed in 
         const user = userCredential.user;
         console.log("user in SignInForm" , user)
-          // when user signed in or sign up nav to browse page
-          navigate("/Browse")
+          
         
       })
         .catch((error) => {
@@ -129,13 +127,7 @@ const Login = () => {
           photoURL: "https://cdn.vectorstock.com/i/1000x1000/55/60/female-user-vector-14585560.webp"
         }).then(() => {
           
-           //  navigate to browse page to search films
-           navigate("Browse");
-
-
-
-         
-        }).catch((error) => {
+          }).catch((error) => {
           // An error occurred
         
         });
@@ -174,9 +166,8 @@ const Login = () => {
           alt="Logo"
         />
       </div>
-
-      <form  ref={formRef}
-        onSubmit={(e) => {
+       <form
+            onSubmit={(e) => {
           e.preventDefault();
           //  e.target.reset();
         }}
