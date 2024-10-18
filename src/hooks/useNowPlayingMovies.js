@@ -4,7 +4,7 @@ import { useDispatch } from "react-redux";
 import { addNowPlayingMovies } from "../Utils/movieSlice";
 
 
-const useNowPlayingMovies = () =>{
+const useNowPlayingMovies= () =>{
     const dispatch = useDispatch();
 
 
@@ -34,4 +34,4 @@ const useNowPlayingMovies = () =>{
 
 }
 
-export default useNowPlayingMovies
+export default useNowPlayingMovies;

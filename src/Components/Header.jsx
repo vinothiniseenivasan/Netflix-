@@ -94,6 +94,7 @@ const Header = () =>{
 
       
           {
+            // if user is present show logo
           (userInformation && (
         
         <div className="flex items-center mr-12">
