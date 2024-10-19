@@ -8,11 +8,11 @@ const Browse = () =>{
 
    useNowPlayingMovies();
     return(
-        <div className="text-white ">
+        <div>
             <Header />
             <MainContainer />
             <SecondaryContainer />
-        Browse
+        {/* Browse */}
        </div>
 
     )
