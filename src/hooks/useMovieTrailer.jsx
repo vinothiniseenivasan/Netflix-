@@ -32,7 +32,7 @@ const useMovieTrailer = ( movieId) => {
   //  there is a case no trailor video in that case just take first video which has any type
  const firstTrailorType  = ( filterMovieTrailorVideos.length === 0) ? jsonInfo.results[0] : filterMovieTrailorVideos[0];
 
- console.log("firstTrailorType" ,firstTrailorType.key);
+//  console.log("firstTrailorType" ,firstTrailorType.key);
 //  dispatch an action to store ket of trailervideo
  dispatch(addGetTrailerKey(firstTrailorType.key));
 

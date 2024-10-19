@@ -10,3 +10,15 @@ export const TMDB_API_OPTIONS = {
       Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJmNzNiODBjZTY5MjhmMWY5YTU1NTk2MWZhZTZkYzEwMyIsIm5iZiI6MTcyOTI1MjA2Ni43OTQ0MDYsInN1YiI6IjY3MTI0OTMzOGU4NDQ2NTdiN2ZiMTc0OSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.3MSCCR9b2TkAju5oUvM7MX1iVPA0JBkH-gHiv1NPU6c'
     }
   };
+
+
+export  const options = {
+    method: 'GET',
+    headers: {
+      accept: 'application/json',
+      Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJmNzNiODBjZTY5MjhmMWY5YTU1NTk2MWZhZTZkYzEwMyIsIm5iZiI6MTcyOTM1Mjk0My44NjE3NDIsInN1YiI6IjY3MTI0OTMzOGU4NDQ2NTdiN2ZiMTc0OSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.x71oDC4bcacUFzKl9XAtbonUULT3UrRfDglaEw6bd2A'
+    }
+  };
+
+
+  export const TMDB_CDN_URL ="https://image.tmdb.org/t/p/w780/"

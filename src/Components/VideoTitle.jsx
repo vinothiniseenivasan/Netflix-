@@ -24,7 +24,7 @@ const VideoTitle = ({title , overview}) => {
 
   return (
     // z-10 overlap on video background
-    <div className='pt-36  z-[11] text-black p-20 absolute  '>
+    <div className='pt-36  z-[18]  p-20 absolute top-60% '>
      
           {/* {title and overview} */}
          <h1 className='text-7xl font-bold text-red-600 leading-[2] tracking-wide'>

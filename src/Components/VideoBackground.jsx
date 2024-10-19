@@ -24,7 +24,7 @@ const VideoBackground = ({ movieId }) => {
       // so how to get dynamic key from movieId
       // 1st way is using useState
       // 2 nd way is using redux store
-    <div className='w-screen absolute'> 
+    <div className='w-screen relative z-[10]'> 
       <iframe 
      
        src={`https://www.youtube.com/embed/${trailerKey}?si=YGOAe3X2HWYm5uAc?&autoplay=1&mute=1 `}
