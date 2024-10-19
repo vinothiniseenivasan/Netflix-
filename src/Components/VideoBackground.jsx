@@ -27,7 +27,7 @@ const VideoBackground = ({ movieId }) => {
     <div className='w-screen absolute'> 
       <iframe 
      
-       src={`https://www.youtube.com/embed/${trailerKey}?si=YGOAe3X2HWYm5uAc?&autoplay=1&mute=1`}
+       src={`https://www.youtube.com/embed/${trailerKey}?si=YGOAe3X2HWYm5uAc?&autoplay=1&mute=1 `}
        className='w-screen aspect-video'
 
         title="YouTube video player"
