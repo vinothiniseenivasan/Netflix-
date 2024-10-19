@@ -2,13 +2,14 @@ import React from 'react'
 
 const VideoTitle = ({title , overview}) => {
   return (
-    <div className='pt-36  bg-white text-black p-20'>
+    // z-10 overlap on video background
+    <div className='pt-36   text-black p-20 absolute '>
      
           {/* {title and overview} */}
          <h1 className='text-7xl font-bold text-red-600 leading-[2] tracking-wide'>
             {title}
          </h1>
-         <p className='w-1/4 text-xl ml-2'>
+         <p className='w-1/4 text-xl ml-2 text-white'>
             {overview}
          </p>
 
@@ -16,7 +17,10 @@ const VideoTitle = ({title , overview}) => {
 
          {/* play button */}
          <div className='flex justify-start items-center mt-6'>
-         <button className='cursor-pointer border border-black rounded-md bg-white text-black px-3 py-2 flex items-center justify-center'>
+         <button 
+        
+             className =' ml-5 cursor-pointer border border-black rounded-md bg-white text-black px-3 py-2 flex items-center justify-center hover:bg-green-400 '>
+    
 
              <span>
                 <img 

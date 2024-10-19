@@ -84,7 +84,7 @@ const Header = () =>{
 
 
     return(
-       <div className="z-10 absolute  w-screen  bg-gradient-to-b from-black flex justify-between items-center p-3 mr-7  " >   
+       <div className="z-10 absolute  w-screen  bg-gradient-to-b from-blue-50 flex justify-between items-center p-3 mr-7  " >   
           {/* netflix logo img */}
         <img 
         className="w-[15rem]"
@@ -97,7 +97,7 @@ const Header = () =>{
             // if user is present show logo
           (userInformation && (
         
-        <div className="flex items-center mr-12">
+        <div className="flex items-center mr-12 ">
             {/* user account image $&&  signout btn */}
                 
                

@@ -23,7 +23,7 @@ const MainContainer = () => {
     const {original_title ,overview , id }  = oneMovie;
   
   return (
-    <div>
+    <div className='relative'>
         {/* MainContainer */}
         {/* 2 => movie Trailer and Movie Title */}
         <VideoTitle    title = {original_title}    overview = {overview}  />
