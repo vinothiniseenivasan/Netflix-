@@ -21,4 +21,12 @@ export  const options = {
   };
 
 
-  export const TMDB_CDN_URL ="https://image.tmdb.org/t/p/w780/"
+  export const TMDB_CDN_URL ="https://image.tmdb.org/t/p/w780/";
+
+  export const NETFLIX_BACKGROUND_IMAGE ="https://assets.nflxext.com/ffe/siteui/vlv3/4d2c5849-b306-4884-9036-6211f7ee0178/web/AE-en-20240930-TRIFECTA-perspective_2b92276f-74d2-4979-8808-8c064a1c5ac2_large.jpg";
+
+  export const IND_FLAG_IMG ="https://cdn.britannica.com/97/1597-050-008F30FA/Flag-India.jpg";
+
+  export const SPAN_FLAG_IMG ="https://m.media-amazon.com/images/I/41X-F7ySp5L._SY445_SX342_QL70_ML2_.jpg";
+
+  export const US_FLAG_IMG = "https://www.military1st.co.uk/media/catalog/product/cache/c26ef0e09cf22f3fd91db024672786d9/m/f/mfh_large_flag_usa.jpg"

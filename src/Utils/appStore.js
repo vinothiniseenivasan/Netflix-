@@ -1,6 +1,7 @@
 import userSliceReducer from "./userSlice";
 import movieSliceReducer from "./movieSlice.js";
 import gptSliceReducer from "./gptSlice.js";
+import langSliceReducer from "./langSlice.js";
 
 
 
@@ -16,8 +17,10 @@ const appStore  =  configureStore (
             movies : movieSliceReducer , 
 
              // provide gptSlice Reducer into appStore
-             gpt : gptSliceReducer
+             gpt : gptSliceReducer ,
 
+             // provide langSlice Reducer into appStore
+             lang : langSliceReducer
 
 
         }

@@ -11,6 +11,7 @@ import {  signInWithEmailAndPassword } from "firebase/auth";
 import {  updateProfile } from "firebase/auth";
 import { useDispatch } from "react-redux";
 import { addUser } from "../Utils/userSlice";
+import { NETFLIX_BACKGROUND_IMAGE } from "../Utils/constant";
 
 const Login = () => {
   const [isSignIn, setIsSignIn] = useState(true);
@@ -162,7 +163,7 @@ const Login = () => {
         {/* Background image */}
         <img
           className="h-full w-full object-cover"
-          src="https://assets.nflxext.com/ffe/siteui/vlv3/4d2c5849-b306-4884-9036-6211f7ee0178/web/AE-en-20240930-TRIFECTA-perspective_2b92276f-74d2-4979-8808-8c064a1c5ac2_large.jpg"
+          src={NETFLIX_BACKGROUND_IMAGE}
           alt="Logo"
         />
       </div>

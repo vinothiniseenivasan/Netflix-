@@ -26,7 +26,7 @@ const SecondaryContainer = () => {
     // 2 . movie description card   
         // for movie description card we already ve in redux store , we can get it by useSelctor
    
-    <div className=''>
+    <div className='bg-black'>
       {/* { console.log("its a SecondaryContainer")} */}
             <MovieList 
              movieListTitle = {"Comedies"}

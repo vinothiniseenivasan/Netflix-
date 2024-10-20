@@ -24,6 +24,7 @@
     background-color: black; /* Ensures dropdown background is black */
 }
 
+
 /* Style for the dropdown toggle */
 .dropdown-toggle {
     color: white; /* Ensure dropdown toggle text is white */
@@ -33,4 +34,8 @@
 
 .custom-dropdown-toggle::after {
     display: none !important;
+}
+flag_hover:hover{
+    background-color: red !important; /* Use red background on hover */
+    color: white !important; /* Ensure text color stays white */
 }

@@ -6,7 +6,7 @@ import appStore from './Utils/appStore';
 
 function App() {
   return (
-    <div  className='bg-black'>
+    <div  className=''>
       {/* provide whole store configureStore to root of our componenet */}
       <Provider store={appStore}>
                  <Body />

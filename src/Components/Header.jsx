@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import { Dropdown, Button } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -11,13 +11,47 @@ import { useEffect } from "react";
 import { onAuthStateChanged } from "firebase/auth";
 import { useDispatch } from "react-redux";
 import { addUser, removeUser } from "../Utils/userSlice";
-import { Netflix_DROPDOWN, NETFLIX_LOGOURL } from '../Utils/constant';
+import { IND_FLAG_IMG, Netflix_DROPDOWN, NETFLIX_LOGOURL, SPAN_FLAG_IMG, US_FLAG_IMG } from '../Utils/constant';
 import { toggleGptSearchView } from '../Utils/gptSlice';
+import { changeLanguage } from '../Utils/langSlice';
 
 
 
 
 const Header = () =>{
+
+
+    const [lang , setLang] = useState("Hindi");
+    const [img , setImg] = useState(IND_FLAG_IMG);
+
+
+    // function handleLanguageChange(language)
+    // {
+    //     console.log("language" ,language)
+    //     // dispatch(changeLanguage(lang));
+    // }
+
+    function handleLang(nation)
+    {
+        // dispatch(changeLanguage(lang));
+        setLang(nation);
+      
+        if(nation === "Hindi")
+        {
+            setImg(IND_FLAG_IMG);
+        }
+        if(nation === "Spanish")
+            {
+                console.log("spanish")
+                setImg(SPAN_FLAG_IMG);
+            }
+            if(nation === "English")
+                {
+                    console.log("spanish")
+                    setImg(US_FLAG_IMG);
+                }
+                dispatch(changeLanguage(nation));
+    }
 
     // dispatch an action on onAuthChanged
     const dispatch = useDispatch();
@@ -28,7 +62,7 @@ const Header = () =>{
 
   const navigate = useNavigate();
 
-
+  
    function handleGptSearchComponent()
    { 
     // when click to search gpt function toggle gptSearchComponent
@@ -116,12 +150,104 @@ const Header = () =>{
             {/* user account image $&&  signout btn */}
             {/* when we click this component show GptSearchComponenet */}
 
+
+            {/* dropdown box for language selection */}
+             {/* Dropdown */}
+             <Dropdown className='mr-6'>
+                    {/* <Dropdown.Toggle variant="secondary" id="dropdown-basic" className=" flex items-center w-full"> */}
+                    <Dropdown.Toggle variant="secondary" id="dropdown-basic" className="dropdown-toggle flex items-center " bsPrefix="custom-dropdown-toggle">
+                    
+                    <div className='flex items-center'>
+                           <img
+                          //  url of  dropdown head img => its contain languages 
+                           src={img}
+                           className="w-7 h-7 cursor-pointer"
+                           alt="user-account" />
+                            <span className='ml-2'
+                            onClick={()=>{
+                               handleLang(lang)
+                              
+                            }}>{lang}</span>
+                           <span className="ml-2">▼</span>
+                     </div>
+
+                 
+                  
+                    </Dropdown.Toggle>
+
+                    <Dropdown.Menu className='p-3 m-2 bg-black  rounded'>
+                        <span className='flex items-center'>
+                            <img
+                                src="https://cdn-icons-png.flaticon.com/128/446/446163.png"
+                                alt="kid-img"
+                                className="w-5 h-5 mr-2  rounded-lg bg-slate-50 hover:bg-red-500"
+                                onClick={()=>{handleLang("Hindi")
+                                    
+                                }}
+                            />
+                            <Dropdown.Item
+                                href="#"
+                                className='dropdown-item'
+                                >
+                                Hindi
+                            </Dropdown.Item>
+                        </span>
+
+                        <span className='flex items-center mt-1'>
+                            <img
+                                src="https://cdn-icons-png.flaticon.com/128/446/446163.png"
+                                className='  bg-slate-50 hover:bg-red-500 w-5 h-5 rounded-lg mr-2'
+                                alt='man-img'
+                                onClick={()=>{ handleLang("English")
+                                  
+
+                                }  }
+                                
+                            />
+                            <Dropdown.Item
+                                href="#"
+                                className='dropdown-item'>
+                                English
+                            </Dropdown.Item>
+                        </span>
+
+                        <span className='flex items-center mt-1'>
+                            <img
+                                src="https://cdn-icons-png.flaticon.com/128/446/446163.png"
+                                className='rounded-lg  bg-slate-50 hover:bg-red-500 w-5 h-5 mr-2'
+                                alt='man-img'
+                                onClick={()=>{
+                                    handleLang("Spanish")
+                                   
+                                }}
+                            />
+                            <Dropdown.Item
+                                href="#"
+                                className='text-white hover:bg-red-600'>
+                                Spanish
+                            </Dropdown.Item>
+                        </span>
+                     
+
+                        
+
+                    </Dropdown.Menu>
+                </Dropdown>
+           
+
+                 
+                  
+                    
+
             {/* Search Gpt button */}
               <button 
               className='bg-lime-700 text-white rounded-md px-4 py-2 mr-5 hover:bg-orange-600'
               onClick = {handleGptSearchComponent}>
                  Search Gpt
                 </button>  
+
+
+
                
                 {/* Dropdown */}
                 <Dropdown >
