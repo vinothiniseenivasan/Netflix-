@@ -99,7 +99,9 @@ const Header = () =>{
         
         <div className="flex items-center mr-12 ">
             {/* user account image $&&  signout btn */}
-                
+              <button className='bg-lime-700 text-white rounded-md px-4 py-2 mr-5 '>
+                 Search Gpt
+                </button>  
                
                 {/* Dropdown */}
                 <Dropdown >
