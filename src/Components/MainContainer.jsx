@@ -17,7 +17,7 @@ const MainContainer = () => {
       return;
     }
     const oneMovie = movies[0];
-    console.log("oneMovie" , oneMovie);
+    // console.log("oneMovie" , oneMovie);
      
     // title and description of movie
     const {original_title ,overview , id }  = oneMovie;

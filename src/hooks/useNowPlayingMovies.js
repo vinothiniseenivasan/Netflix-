@@ -16,7 +16,7 @@ const useNowPlayingMovies= () =>{
 
        const jsonInfo = await data.json();
 
-       console.log("jsonInfo" ,jsonInfo.results);
+    //    console.log("jsonInfo" ,jsonInfo.results);
         // store our movie api information to Redux store by using dispatch
        dispatch(addNowPlayingMovies(jsonInfo.results));
 

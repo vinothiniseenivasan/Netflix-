@@ -16,7 +16,7 @@ const usePopMovies= () =>{
     const data = await   fetch('https://api.themoviedb.org/3/tv/airing_today?language=en-US&page=1', options);
        const jsonInfo = await data.json();
 
-       console.log("jsonInfo in popular" ,jsonInfo.results);
+    //    console.log("jsonInfo in popular" ,jsonInfo.results);
         // store our movie api information to Redux store by using dispatch
        dispatch( addGetPopularMovies(jsonInfo.results));
 

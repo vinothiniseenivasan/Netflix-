@@ -12,6 +12,7 @@ import { onAuthStateChanged } from "firebase/auth";
 import { useDispatch } from "react-redux";
 import { addUser, removeUser } from "../Utils/userSlice";
 import { Netflix_DROPDOWN, NETFLIX_LOGOURL } from '../Utils/constant';
+import { toggleGptSearchView } from '../Utils/gptSlice';
 
 
 
@@ -26,6 +27,20 @@ const Header = () =>{
     // console.log("userInformation" ,userInformation)
 
   const navigate = useNavigate();
+
+
+   function handleGptSearchComponent()
+   { 
+    // when click to search gpt function toggle gptSearchComponent
+
+    // add in reducer
+      dispatch(toggleGptSearchView());
+
+      
+
+   }
+
+
     function handleSignOut()
     {
 
@@ -99,7 +114,12 @@ const Header = () =>{
         
         <div className="flex items-center mr-12 ">
             {/* user account image $&&  signout btn */}
-              <button className='bg-lime-700 text-white rounded-md px-4 py-2 mr-5 '>
+            {/* when we click this component show GptSearchComponenet */}
+
+            {/* Search Gpt button */}
+              <button 
+              className='bg-lime-700 text-white rounded-md px-4 py-2 mr-5 hover:bg-orange-600'
+              onClick = {handleGptSearchComponent}>
                  Search Gpt
                 </button>  
                

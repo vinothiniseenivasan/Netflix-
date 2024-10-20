@@ -14,7 +14,7 @@ const SecondaryContainer = () => {
 
   const movies = useSelector(store => store.movies);
 
-   console.log("movies.getPopularMovies" , movies.getPopularMovies)
+  //  console.log("movies.getPopularMovies" , movies.getPopularMovies)
 
   // its contain movie cards and details of each Movie
 

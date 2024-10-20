@@ -1,5 +1,7 @@
 import userSliceReducer from "./userSlice";
 import movieSliceReducer from "./movieSlice.js";
+import gptSliceReducer from "./gptSlice.js";
+
 
 
 import { configureStore } from "@reduxjs/toolkit";
@@ -11,7 +13,12 @@ const appStore  =  configureStore (
            user : userSliceReducer,
 
             // provide moviesSlice Reducer into appStore
-            movies : movieSliceReducer ,
+            movies : movieSliceReducer , 
+
+             // provide gptSlice Reducer into appStore
+             gpt : gptSliceReducer
+
+
 
         }
     }

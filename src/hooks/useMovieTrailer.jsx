@@ -17,7 +17,7 @@ const useMovieTrailer = ( movieId) => {
 
    const jsonInfo =await data.json();
 
-    console.log("jsonInfo" , jsonInfo.results);
+    // console.log("jsonInfo" , jsonInfo.results);
 
    const filterMovieTrailorVideos = jsonInfo.results.filter((eachMovie)=>{
     // console.log("eachMovie,title" ,eachMovie.title)
