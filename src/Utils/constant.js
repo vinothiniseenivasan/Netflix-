@@ -29,4 +29,8 @@ export  const options = {
 
   export const SPAN_FLAG_IMG ="https://m.media-amazon.com/images/I/41X-F7ySp5L._SY445_SX342_QL70_ML2_.jpg";
 
-  export const US_FLAG_IMG = "https://www.military1st.co.uk/media/catalog/product/cache/c26ef0e09cf22f3fd91db024672786d9/m/f/mfh_large_flag_usa.jpg"
+  export const US_FLAG_IMG = "https://www.military1st.co.uk/media/catalog/product/cache/c26ef0e09cf22f3fd91db024672786d9/m/f/mfh_large_flag_usa.jpg";
+
+  export const OPEN_AI_KEY= "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";
+  
+ 

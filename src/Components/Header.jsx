@@ -21,8 +21,8 @@ import { changeLanguage } from '../Utils/langSlice';
 const Header = () =>{
 
 
-    const [lang , setLang] = useState("Hindi");
-    const [img , setImg] = useState(IND_FLAG_IMG);
+    const [lang , setLang] = useState("English");
+    const [img , setImg] = useState(US_FLAG_IMG);
 
 
     const showLangSelection = useSelector((store) => store.gpt.showGptSearch);
