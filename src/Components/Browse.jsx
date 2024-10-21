@@ -26,7 +26,7 @@ const Browse = () =>{
 
     // useSelector
     const showGpt = useSelector((store) => store.gpt.showGptSearch);
-    console.log("showGptSearch" ,showGpt)
+    // console.log("showGptSearch" ,showGpt)
 
     
     

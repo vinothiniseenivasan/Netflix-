@@ -1,15 +1,15 @@
 const lang = {
-    en : {
+    English : {
         search : "search" ,
         gptSearchBarPlaceHolder : "What would you like to watch ?"
 
     } ,
-    hindi :
+    Hindi :
     {
           search : "खोज" ,
           gptSearchBarPlaceHolder : "क्या आप मेरे साथ एक फिल्म देखेंगे ?"
     } ,
-    spanish :
+    Spanish :
     {
           search : "buscar" ,
           gptSearchBarPlaceHolder : "¿Qué te gustaría ver?"

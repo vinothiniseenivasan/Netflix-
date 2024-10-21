@@ -25,12 +25,10 @@ const Header = () =>{
     const [img , setImg] = useState(IND_FLAG_IMG);
 
 
-    // function handleLanguageChange(language)
-    // {
-    //     console.log("language" ,language)
-    //     // dispatch(changeLanguage(lang));
-    // }
+    const showLangSelection = useSelector((store) => store.gpt.showGptSearch);
+    // console.log("showLangSelection" ,showLangSelection)
 
+    
     function handleLang(nation)
     {
         // dispatch(changeLanguage(lang));
@@ -42,12 +40,12 @@ const Header = () =>{
         }
         if(nation === "Spanish")
             {
-                console.log("spanish")
+                // console.log("spanish")
                 setImg(SPAN_FLAG_IMG);
             }
             if(nation === "English")
                 {
-                    console.log("spanish")
+                    // console.log("spanish")
                     setImg(US_FLAG_IMG);
                 }
                 dispatch(changeLanguage(nation));
@@ -133,7 +131,7 @@ const Header = () =>{
 
 
     return(
-       <div className="z-[15] absolute  w-screen  bg-gradient-to-b from-blue-50 flex justify-between items-center p-3 mr-7 " >   
+       <div className="z-[17] absolute  w-screen  bg-gradient-to-b from-blue-50 flex justify-between items-center p-3 mr-7 " >   
           {/* netflix logo img */}
         <img 
         className="w-[15rem]"
@@ -153,87 +151,93 @@ const Header = () =>{
 
             {/* dropdown box for language selection */}
              {/* Dropdown */}
-             <Dropdown className='mr-6'>
-                    {/* <Dropdown.Toggle variant="secondary" id="dropdown-basic" className=" flex items-center w-full"> */}
-                    <Dropdown.Toggle variant="secondary" id="dropdown-basic" className="dropdown-toggle flex items-center " bsPrefix="custom-dropdown-toggle">
-                    
-                    <div className='flex items-center'>
-                           <img
-                          //  url of  dropdown head img => its contain languages 
-                           src={img}
-                           className="w-7 h-7 cursor-pointer"
-                           alt="user-account" />
-                            <span className='ml-2'
-                            onClick={()=>{
-                               handleLang(lang)
-                              
-                            }}>{lang}</span>
-                           <span className="ml-2">▼</span>
-                     </div>
 
-                 
-                  
-                    </Dropdown.Toggle>
+             {
+                (showLangSelection) &&
+                <Dropdown className='mr-6'>
+                {/* <Dropdown.Toggle variant="secondary" id="dropdown-basic" className=" flex items-center w-full"> */}
+                <Dropdown.Toggle variant="secondary" id="dropdown-basic" className="dropdown-toggle flex items-center " bsPrefix="custom-dropdown-toggle">
+                
+                <div className='flex items-center'>
+                       <img
+                      //  url of  dropdown head img => its contain languages 
+                       src={img}
+                       className="w-7 h-7 cursor-pointer"
+                       alt="user-account" />
+                        <span className='ml-2'
+                        onClick={()=>{
+                           handleLang(lang)
+                          
+                        }}>{lang}</span>
+                       <span className="ml-2">▼</span>
+                 </div>
 
-                    <Dropdown.Menu className='p-3 m-2 bg-black  rounded'>
-                        <span className='flex items-center'>
-                            <img
-                                src="https://cdn-icons-png.flaticon.com/128/446/446163.png"
-                                alt="kid-img"
-                                className="w-5 h-5 mr-2  rounded-lg bg-slate-50 hover:bg-red-500"
-                                onClick={()=>{handleLang("Hindi")
-                                    
-                                }}
-                            />
-                            <Dropdown.Item
-                                href="#"
-                                className='dropdown-item'
-                                >
-                                Hindi
-                            </Dropdown.Item>
-                        </span>
+             
+              
+                </Dropdown.Toggle>
 
-                        <span className='flex items-center mt-1'>
-                            <img
-                                src="https://cdn-icons-png.flaticon.com/128/446/446163.png"
-                                className='  bg-slate-50 hover:bg-red-500 w-5 h-5 rounded-lg mr-2'
-                                alt='man-img'
-                                onClick={()=>{ handleLang("English")
-                                  
-
-                                }  }
+                <Dropdown.Menu className='p-3 m-2 bg-black  rounded'>
+                    <span className='flex items-center'>
+                        <img
+                            src="https://cdn-icons-png.flaticon.com/128/446/446163.png"
+                            alt="kid-img"
+                            className="w-5 h-5 mr-2  rounded-lg bg-slate-50 hover:bg-red-500"
+                            onClick={()=>{handleLang("Hindi")
                                 
-                            />
-                            <Dropdown.Item
-                                href="#"
-                                className='dropdown-item'>
-                                English
-                            </Dropdown.Item>
-                        </span>
+                            }}
+                        />
+                        <Dropdown.Item
+                            href="#"
+                            className='dropdown-item'
+                            >
+                            Hindi
+                        </Dropdown.Item>
+                    </span>
 
-                        <span className='flex items-center mt-1'>
-                            <img
-                                src="https://cdn-icons-png.flaticon.com/128/446/446163.png"
-                                className='rounded-lg  bg-slate-50 hover:bg-red-500 w-5 h-5 mr-2'
-                                alt='man-img'
-                                onClick={()=>{
-                                    handleLang("Spanish")
-                                   
-                                }}
-                            />
-                            <Dropdown.Item
-                                href="#"
-                                className='text-white hover:bg-red-600'>
-                                Spanish
-                            </Dropdown.Item>
-                        </span>
-                     
+                    <span className='flex items-center mt-1'>
+                        <img
+                            src="https://cdn-icons-png.flaticon.com/128/446/446163.png"
+                            className='  bg-slate-50 hover:bg-red-500 w-5 h-5 rounded-lg mr-2'
+                            alt='man-img'
+                            onClick={()=>{ handleLang("English")
+                              
 
-                        
+                            }  }
+                            
+                        />
+                        <Dropdown.Item
+                            href="#"
+                            className='dropdown-item'>
+                            English
+                        </Dropdown.Item>
+                    </span>
 
-                    </Dropdown.Menu>
-                </Dropdown>
-           
+                    <span className='flex items-center mt-1'>
+                        <img
+                            src="https://cdn-icons-png.flaticon.com/128/446/446163.png"
+                            className='rounded-lg  bg-slate-50 hover:bg-red-500 w-5 h-5 mr-2'
+                            alt='man-img'
+                            onClick={()=>{
+                                handleLang("Spanish")
+                               
+                            }}
+                        />
+                        <Dropdown.Item
+                            href="#"
+                            className='text-white hover:bg-red-600'>
+                            Spanish
+                        </Dropdown.Item>
+                    </span>
+                 
+
+                    
+
+                </Dropdown.Menu>
+            </Dropdown>
+       
+             }
+            
+            
 
                  
                   
@@ -243,7 +247,7 @@ const Header = () =>{
               <button 
               className='bg-lime-700 text-white rounded-md px-4 py-2 mr-5 hover:bg-orange-600'
               onClick = {handleGptSearchComponent}>
-                 Search Gpt
+                 {(showLangSelection) ? "HomePage" : "Gpt Search" }
                 </button>  
 
 
