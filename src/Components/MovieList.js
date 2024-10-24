@@ -25,7 +25,11 @@ const MovieList = ({movieListTitle , movies ,gpt}) => {
                         return(
                             <MovieCard 
                              key={eachMovie.id}
-                             posterPath={eachMovie.poster_path}/>
+                             posterPath={eachMovie.poster_path}
+                             movieId={eachMovie.id}
+                             overview ={eachMovie.overview}
+                             original_title ={eachMovie.original_title }
+                             />
                         )
                     }) )
                 

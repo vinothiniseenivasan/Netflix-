@@ -8,6 +8,8 @@ import { addGetTrailerKey } from '../Utils/movieSlice';
 
 const useMovieTrailer = ( movieId) => {
    
+
+  console.log("movieId" ,movieId)
    
     const dispatch = useDispatch();
 
@@ -15,9 +17,9 @@ const useMovieTrailer = ( movieId) => {
   {
    const data =await fetch(`https://api.themoviedb.org/3/movie/${movieId}/videos?language=en-US`, TMDB_API_OPTIONS);
 
-   const jsonInfo =await data.json();
+   const jsonInfo =await data?.json();
 
-    // console.log("jsonInfo" , jsonInfo.results);
+     console.log("jsonInfo" , jsonInfo?.results);
 
    const filterMovieTrailorVideos = jsonInfo.results.filter((eachMovie)=>{
     // console.log("eachMovie,title" ,eachMovie.title)

@@ -15,6 +15,7 @@ import { IND_FLAG_IMG, Netflix_DROPDOWN, NETFLIX_LOGOURL, SPAN_FLAG_IMG, US_FLAG
 import { toggleGptSearchView } from '../Utils/gptSlice';
 import { changeLanguage } from '../Utils/langSlice';
 import { removeGptMovieResults } from '../Utils/gptSlice';
+import { toggleMovieTrailer } from '../Utils/movieTrailerSlice';
 
 
 
@@ -25,10 +26,22 @@ const Header = () =>{
     const [lang , setLang] = useState("English");
     const [img , setImg] = useState(US_FLAG_IMG);
 
+    const showTrailer = useSelector((store) => store.movieTrailer.showMovieTrailer);
+
+    // to activate home page
+    const [home ,setHome] = useState(true);
+
 
     const showLangSelection = useSelector((store) => store.gpt.showGptSearch);
+
+
+   
     // console.log("showLangSelection" ,showLangSelection)
 
+
+
+   
+    // console.log("showLangSelection" ,showLangSelection)
     
     function handleLang(nation)
     {
@@ -66,10 +79,16 @@ const Header = () =>{
    { 
     // when click to search gpt function toggle gptSearchComponent
 
+
+
     // add in reducer
       dispatch(toggleGptSearchView());
 
-      
+       dispatch(toggleMovieTrailer());
+
+     
+     setHome(showTrailer);
+
 
    }
    
@@ -104,39 +123,46 @@ const Header = () =>{
     useEffect(()=>{
 
         // whenever signed in or signed out user we store information in redux store in root of our project hear app.js or body.js by use onAuthStateChanged prperty
-    
-      const unsubscribe =    onAuthStateChanged(auth, (user) => {
-                   if (user) {
-                     // User is signed in, see docs for a list of available properties and sign up
-                     // https://firebase.google.com/docs/reference/js/auth.user
-                     const {uid , displayName , email, photoURL} = user;
-                    //  addUser dispatch an action
-                     dispatch(addUser(
-                        {
-                            uid : uid ,
-                            displayName : displayName,
-                            email :email ,
-                            photoURL :photoURL
-    
-                        }
-                    ))
-                    //  sign in success so navigate to browse page
-                    navigate("/browse");
-                   } 
-                   else {
-                     // User is signed out 
-                    //  removeUSer
-    
-                     dispatch(removeUser());
-                    //  signout navigate to login page
-                    navigate("/");
-                  
-                   }
-                  });
+      
 
-                //   for component unMount  its unsubscribe from browser
-                return () =>  unsubscribe();
-       } , [])
+        const unsubscribe =    onAuthStateChanged(auth, (user) => {
+            if (user) {
+              // User is signed in, see docs for a list of available properties and sign up
+              // https://firebase.google.com/docs/reference/js/auth.user
+              const {uid , displayName , email, photoURL} = user;
+             //  addUser dispatch an action
+              dispatch(addUser(
+                 {
+                     uid : uid ,
+                     displayName : displayName,
+                     email :email ,
+                     photoURL :photoURL
+
+                 }
+             ))
+             //  sign in success so navigate to browse page
+             navigate("/browse");
+            } 
+            else {
+              // User is signed out 
+             //  removeUSer
+
+              dispatch(removeUser());
+             //  signout navigate to login page
+             navigate("/");
+           
+            }
+           });
+
+         //   for component unMount  its unsubscribe from browser
+         return () =>  unsubscribe();
+
+       
+       
+
+    
+     
+       } , [showTrailer])
     
     
 
@@ -261,7 +287,10 @@ const Header = () =>{
                 handleGptSearchComponent();  
                  checkGptMovies();
               }}>
-                 {(showLangSelection) ? "HomePage" : "Gpt Search" }
+
+         
+                  {  ( showTrailer || showLangSelection) ? "HomePage" : "Gpt Search"}
+         
                
 
                 

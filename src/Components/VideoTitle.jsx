@@ -5,19 +5,11 @@ import { useEffect } from 'react';
 const VideoTitle = ({title , overview}) => {
 
 
-   const [showOverview, setShowOverview] = useState(true);
+  
     // To handle fading effect
    const [isFadingOut, setIsFadingOut] = useState(false);  
 
-  // Hide the overview after 5 seconds (adjust the time as needed)
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setShowOverview(false);
-    }, 5000); // 5000 milliseconds = 5 seconds
-
-    // Cleanup the timer when the component is unmounted or on state changes
-    return () => clearTimeout(timer);
-  }, []);
+ 
 
 
   
@@ -33,11 +25,11 @@ const VideoTitle = ({title , overview}) => {
          {/*  overview => description of movie*/}
 
         {/* Overview will only show if showOverview is true */}
-      {showOverview && (
-        <p className="w-1/4 text-xl ml-2 text-white transition-opacity duration-1000 ">
+      
+        <p className="w-1/4 text-xl ml-2 text-white transition-opacity duration-1000 opacity-50 ">
           {overview}
         </p>
-      )}
+      
          {/* <p className='w-1/4 text-xl ml-2 text-white'>
             {overview}
          </p> */}
@@ -60,23 +52,7 @@ const VideoTitle = ({title , overview}) => {
             Play
           </span>
         </button>
-         {/* <button 
         
-             className =' ml-5 cursor-pointer border border-black rounded-md bg-white text-black px-3 py-2 flex items-center justify-center hover:bg-red-700'>
-    
-
-             <span>
-                <img 
-                src="https://cdn-icons-png.flaticon.com/128/626/626053.png"
-                 alt="play-img" 
-                 className='w-5 h-5'/>
-            </span>
-            <span className='text-xl font-bold ml-4 opacity-80 tracking-wide'>
-            Play
-            </span>
-           
-           
-         </button> */}
         {/* moreinfo */}
         <button className=' ml-5 cursor-pointer border border-black rounded-md bg-gray-500 text-white px-3 py-2 flex items-center justify-center hover:opacity-70'>
 

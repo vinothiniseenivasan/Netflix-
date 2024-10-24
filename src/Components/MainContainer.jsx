@@ -9,6 +9,8 @@ const MainContainer = () => {
     // dispatch an action already done in redux store to get movie info.
     //  how => by useSelector from redux store
     const movies = useSelector(store => store?.movies?.nowPlayingMovies);
+    const showTrailerSlice = useSelector((store) => store.movieTrailer);
+    // console.log("showTrailer",showTrailer)
 
     // if movies null means return
     // intialreturn
@@ -16,11 +18,24 @@ const MainContainer = () => {
     {
       return;
     }
-    const oneMovie = movies[0];
+
+   
+    
+    var oneMovie = movies[0];
+
+    
+    
     // console.log("oneMovie" , oneMovie);
      
     // title and description of movie
-    const {original_title ,overview , id }  = oneMovie;
+    var {original_title ,overview , id }  = oneMovie;
+
+    if(showTrailerSlice.showMovieTrailer === true)
+    {
+      original_title = showTrailerSlice.title;
+      overview = showTrailerSlice.overview;
+      id=showTrailerSlice.id
+    }
   
   return (
     <div className='relative'>

@@ -12,7 +12,7 @@ const useThirllerMovies = () => {
     async function getThirllerMovies()
     {
       
-      const data = await fetch('https://api.themoviedb.org/3/tv/top_rated?language=en-US&page=1', options)
+      const data = await fetch('https://api.themoviedb.org/3/movie/popular?language=en-US&page=1', options)
        const jsonInfo = await data.json();
 
     //    console.log("jsonInfo in popular" ,jsonInfo.results);
