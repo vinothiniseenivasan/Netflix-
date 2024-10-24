@@ -3,9 +3,12 @@ import { useEffect } from "react";
 import { options, TMDB_API_OPTIONS } from "../Utils/constant";
 import { useDispatch } from "react-redux";
 import { addGetTrendingMovies } from "../Utils/movieSlice";
+import { useSelector } from 'react-redux';
 
 const useTrendingMovies = () => {
     const dispatch = useDispatch();
+
+    const trendingMovies = useSelector((store) => store.movies.getTrendingMovies);
 
 
     async function getTrendingMovies()
@@ -25,7 +28,7 @@ const useTrendingMovies = () => {
 
     useEffect(() =>{
 
-        getTrendingMovies();
+       !trendingMovies && getTrendingMovies();
     
     } , [])
 

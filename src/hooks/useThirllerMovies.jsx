@@ -3,10 +3,13 @@ import { useEffect } from "react";
 import { options } from "../Utils/constant";
 import { useDispatch } from "react-redux";
 import { addGetThirllerMovies } from "../Utils/movieSlice";
+import { useSelector } from 'react-redux';
 
 
 const useThirllerMovies = () => {
     const dispatch = useDispatch();
+
+    const thirllerMovies = useSelector((store) => store.movies.getThirllerMovies);
 
 
     async function getThirllerMovies()
@@ -24,8 +27,9 @@ const useThirllerMovies = () => {
 
 
     useEffect(() =>{
+        // useMemoziation to avoid api call mulltiple times
 
-        getThirllerMovies();
+       !thirllerMovies && getThirllerMovies();
     
     } , [])
 

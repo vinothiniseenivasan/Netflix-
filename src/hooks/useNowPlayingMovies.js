@@ -1,11 +1,13 @@
 import { useEffect } from "react";
 import { TMDB_API_OPTIONS } from "../Utils/constant";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addNowPlayingMovies } from "../Utils/movieSlice";
 
 
 const useNowPlayingMovies= () =>{
     const dispatch = useDispatch();
+
+    const popMovies = useSelector((store) => store.movies.nowPlayingMovies);
 
 
     async function getNowPlayingMovies()
@@ -25,8 +27,9 @@ const useNowPlayingMovies= () =>{
 
 
     useEffect(() =>{
+        // if already not present  then call
 
-         getNowPlayingMovies();
+         !popMovies && getNowPlayingMovies();
     
     } , [])
 
