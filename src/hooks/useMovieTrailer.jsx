@@ -21,7 +21,7 @@ const useMovieTrailer = ( movieId) => {
 
      console.log("jsonInfo" , jsonInfo?.results);
 
-   const filterMovieTrailorVideos = jsonInfo.results.filter((eachMovie)=>{
+   const filterMovieTrailorVideos = jsonInfo?.results?.filter((eachMovie)=>{
     // console.log("eachMovie,title" ,eachMovie.title)
      return(
       
@@ -32,7 +32,7 @@ const useMovieTrailer = ( movieId) => {
 //    console.log("movieTrailor" ,filterMovieTrailorVideos);
 
   //  there is a case no trailor video in that case just take first video which has any type
- const firstTrailorType  = ( filterMovieTrailorVideos.length === 0) ? jsonInfo.results[0] : filterMovieTrailorVideos[0];
+ const firstTrailorType  = (filterMovieTrailorVideos!== undefined && filterMovieTrailorVideos?.length === 0) ? jsonInfo?.results[0] : filterMovieTrailorVideos[0];
 
 //  console.log("firstTrailorType" ,firstTrailorType.key);
 //  dispatch an action to store ket of trailervideo

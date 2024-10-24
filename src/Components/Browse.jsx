@@ -12,7 +12,7 @@ import MainContainer from "./MainContainer";
 import MovieCardInformation from "./MovieCardInformation";
 import SecondaryContainer from "./SecondaryContainer";
 import { useSelector } from "react-redux";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 // import { useNavigate } from "react-router-dom";
 
 const Browse = () =>{
@@ -21,6 +21,8 @@ const Browse = () =>{
     usePopMovies();
     useTrendingMovies();
     useThirllerMovies();
+
+    const [intial ,setIntial] = useState(false);
 
 
     // we already add in reducer toggleGptSearchView regarding to that we are showing component
@@ -45,7 +47,7 @@ const Browse = () =>{
           <Header />
 
          {
-           (showMovieTrailer) ? <MovieCardInformation /> :
+           (showMovieTrailer ) ? <MovieCardInformation /> :
           (showGpt) ? (<GptSearchComponent />) :
                                       ( <>
                                        <MainContainer />

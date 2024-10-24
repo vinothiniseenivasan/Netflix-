@@ -84,7 +84,12 @@ const Header = () =>{
     // add in reducer
       dispatch(toggleGptSearchView());
 
-       dispatch(toggleMovieTrailer());
+      if(showTrailer)
+      {
+        dispatch(toggleMovieTrailer());
+      }
+
+      
 
      
      setHome(showTrailer);
@@ -289,7 +294,7 @@ const Header = () =>{
               }}>
 
          
-                  {  ( showTrailer || showLangSelection) ? "HomePage" : "Gpt Search"}
+                  {  (  showLangSelection) ? "HomePage" : "Gpt Search"}
          
                
 

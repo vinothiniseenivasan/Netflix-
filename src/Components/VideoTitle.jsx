@@ -10,6 +10,16 @@ const VideoTitle = ({title , overview}) => {
    const [isFadingOut, setIsFadingOut] = useState(false);  
 
  
+   const [showOverview, setShowOverview] = useState(true);
+
+   useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowOverview(false);
+    }, 5000); // 5000 milliseconds = 5 seconds
+
+    // Cleanup the timer when the component is unmounted or on state changes
+    return () => clearTimeout(timer);
+  }, []);
 
 
   
@@ -26,9 +36,11 @@ const VideoTitle = ({title , overview}) => {
 
         {/* Overview will only show if showOverview is true */}
       
-        <p className="w-1/4 text-xl ml-2 text-white transition-opacity duration-1000 opacity-50 ">
+        {showOverview && (
+        <p className="w-1/4 text-xl ml-2 text-white transition-opacity duration-1000 ">
           {overview}
         </p>
+      )}
       
          {/* <p className='w-1/4 text-xl ml-2 text-white'>
             {overview}

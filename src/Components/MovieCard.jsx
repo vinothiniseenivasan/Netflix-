@@ -10,6 +10,7 @@ import { addMovieTrailerId } from '../Utils/movieTrailerSlice';
 import { addMovieTitle } from '../Utils/movieTrailerSlice';
 import { addMovieOverview } from '../Utils/movieTrailerSlice';
 import { useNavigate } from 'react-router-dom';
+import showGptSearch from '../Utils/gptSlice';
 
 const MovieCard = ({posterPath , movieId ,overview ,original_title }) => {
   const ind = useRef(0);
@@ -17,6 +18,7 @@ const MovieCard = ({posterPath , movieId ,overview ,original_title }) => {
   
 
   const [isEnlarge , setIsEnlarge] = useState(false);
+  const showGpt = useSelector((store) => store.gpt.showGptSearch);
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -27,12 +29,14 @@ const MovieCard = ({posterPath , movieId ,overview ,original_title }) => {
   {
     // event.stopPropagation(); // Prevent event bubbling
     setIsEnlarge(true);
-   
+    
     dispatch(toggleMovieTrailer());
     dispatch(addMovieTrailerId(movieId));
     dispatch(addMovieTitle(original_title));
     dispatch(addMovieOverview(overview))
     console.log("Navigating to /MovieInfo");
+
+    
     
   }
 
