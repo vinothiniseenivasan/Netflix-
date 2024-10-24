@@ -29,15 +29,19 @@ const SecondaryContainer = () => {
     <div className='bg-black'>
       {/* { console.log("its a SecondaryContainer")} */}
             <MovieList 
+              gpt={false}
              movieListTitle = {"Comedies"}
              movies = {movies.nowPlayingMovies}/>
               <MovieList 
+                gpt={false}
              movieListTitle = {"Popular Movies"}
              movies = {movies.getPopularMovies}/>
               <MovieList 
+                gpt={false}
              movieListTitle = {"Family Tv Favorites"}
              movies = {movies.getTrendingMovies}/>
               <MovieList 
+                gpt={false}
              movieListTitle = {"Kids Movies"}
              movies = {movies.getThirllerMovies}/>
           

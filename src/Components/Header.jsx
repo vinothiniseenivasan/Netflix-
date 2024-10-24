@@ -14,6 +14,7 @@ import { addUser, removeUser } from "../Utils/userSlice";
 import { IND_FLAG_IMG, Netflix_DROPDOWN, NETFLIX_LOGOURL, SPAN_FLAG_IMG, US_FLAG_IMG } from '../Utils/constant';
 import { toggleGptSearchView } from '../Utils/gptSlice';
 import { changeLanguage } from '../Utils/langSlice';
+import { removeGptMovieResults } from '../Utils/gptSlice';
 
 
 
@@ -71,8 +72,18 @@ const Header = () =>{
       
 
    }
+   
 
+   function checkGptMovies()
+   {
+   if( showLangSelection === true)
+   {
+    // homepage
 
+    dispatch(removeGptMovieResults())
+   }
+   }
+  
     function handleSignOut()
     {
 
@@ -246,8 +257,14 @@ const Header = () =>{
             {/* Search Gpt button */}
               <button 
               className='bg-lime-700 text-white rounded-md px-4 py-2 mr-5 hover:bg-orange-600'
-              onClick = {handleGptSearchComponent}>
+              onClick = {()=>{
+                handleGptSearchComponent();  
+                 checkGptMovies();
+              }}>
                  {(showLangSelection) ? "HomePage" : "Gpt Search" }
+               
+
+                
                 </button>  
 
 

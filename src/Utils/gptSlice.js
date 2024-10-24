@@ -15,6 +15,8 @@ const gptSlice =createSlice({
         addGptMovieResults: (state ,action) =>{
             state.gptMovies  = action.payload;
         } ,
+        removeGptMovieResults: (state ,action) =>{
+            state.gptMovies  =null},
         addGptMovieSuggestions: (state ,action) =>{
             state.movieSuggestion  = action.payload;
         } ,
@@ -23,6 +25,6 @@ const gptSlice =createSlice({
 
 
 
-export const {toggleGptSearchView , addGptMovieResults,addGptMovieSuggestions} = gptSlice.actions;
+export const {toggleGptSearchView , addGptMovieResults,addGptMovieSuggestions, removeGptMovieResults} = gptSlice.actions;
 
 export default gptSlice.reducer;

@@ -6,6 +6,8 @@ import useMovieTrailer from '../hooks/useMovieTrailer';
 
 const VideoBackground = ({ movieId }) => {
 
+  console.log("movieId" , movieId)
+
 
     // useMovieTrailer is a custom hook
     // its used to fetch data from api and get the videos of trilor === type

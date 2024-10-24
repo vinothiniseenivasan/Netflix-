@@ -10,10 +10,10 @@ const GptSearchComponent = () => {
      
 
       {/* netflix background image */}
-      <div className="h-full absolute top-0 left-0 w-full ">
+      <div className="h-full fixed   top-0 left-0 w-full ">
         {/* Background image */}
         <img
-          className="h-full w-full object-cover"
+          className="h-full w-full object-cove opacity-55r"
           src={NETFLIX_BACKGROUND_IMAGE}
           alt="Logo"
         />
