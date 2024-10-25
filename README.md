@@ -37,8 +37,8 @@ This template provides a minimal setup to get React working in Vite with HMR (Ho
           npm start 
          npm run dev
 ## **Screenshot**
-     
-           ![NetflixGPT Screenshot](https://github.com/vinothiniseenivasan/Netflix-/edit/master/README.md/Screenshot 2024-10-21 175856.png)
+  
+   ![NetflixGPT Screenshot](https://raw.githubusercontent.com/vinothiniseenivasan/Netflix-/master/Screenshot%202024-10-21%20175856.png)
 
    
    
