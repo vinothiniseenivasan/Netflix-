@@ -27,13 +27,13 @@ This template provides a minimal setup to get React working in Vite with HMR (Ho
 - **Redux Toolkit**: For managing global state in the app.
 - **React-Redux**: To connect Redux state to React components.
 ## **Installation and Setup**
-1. Clone the repository:
-   git clone https://github.com/your-username/netflix-gpt.git
-2.Install the dependencies:
-   npm install
-3.Install Redux Toolkit and React-Redux:
-    npm install @reduxjs/toolkit react-redux
-4.Run the Project:
-     npm start 
-     npm run dev
+-  1 . Clone the repository:
+          git clone https://github.com/your-username/netflix-gpt.git
+-  2. Install the dependencies:
+          npm install
+-  3. Install Redux Toolkit and React-Redux:
+          npm install @reduxjs/toolkit react-redux
+-  4.Run the Project:
+          npm start 
+         npm run dev
    
