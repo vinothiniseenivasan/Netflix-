@@ -2,9 +2,9 @@ import React from 'react'
 import MovieList from './MovieList'
 
 import { useSelector } from 'react-redux'
-import useNowPlayingMovies from '../hooks/useNowPlayingMovies';
+// import useNowPlayingMovies from '../hooks/useNowPlayingMovies';
 
-  import usePopMovies from '../hooks/usePopMovies';
+  // import usePopMovies from '../hooks/usePopMovies';
 
 const SecondaryContainer = () => {
 

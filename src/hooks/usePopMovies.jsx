@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { options, TMDB_API_OPTIONS } from "../Utils/constant";
+import { options } from "../Utils/constant";
 import { useDispatch } from "react-redux";
 import { addGetPopularMovies } from "../Utils/movieSlice";
 import { useSelector } from 'react-redux';

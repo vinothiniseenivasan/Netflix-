@@ -1,4 +1,4 @@
-import Browse from './Components/Browse';
+// import Browse from './Components/Browse';
 
 import Body from './Components/Body';
 import { Provider } from 'react-redux';

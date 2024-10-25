@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import { Dropdown, Button } from 'react-bootstrap';
+import { Dropdown} from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "../css/Header.css";
 import {  signOut } from "firebase/auth";
@@ -29,7 +29,7 @@ const Header = () =>{
     const showTrailer = useSelector((store) => store.movieTrailer.showMovieTrailer);
 
     // to activate home page
-    const [home ,setHome] = useState(true);
+    // const [home ,setHome] = useState(true);
 
 
     const showLangSelection = useSelector((store) => store.gpt.showGptSearch);
@@ -92,7 +92,7 @@ const Header = () =>{
       
 
      
-     setHome(showTrailer);
+    //  setHome(showTrailer);
 
 
    }
@@ -173,8 +173,11 @@ const Header = () =>{
 
 
     return(
-       <div className="z-[17] absolute  w-screen  bg-gradient-to-b from-blue-50 flex justify-between items-center p-3 mr-7 " >   
+       <div className="z-[17] absolute  w-screen   flex justify-between items-center p-3 mr-7  bg-gradient-to-b from-blue-50     flex-col md:flex-row   mx-auto md:mx-0" >   
           {/* netflix logo img */}
+          {/* flex-col md:flex-row"  small device : flex-col  md: device flex row */}
+
+          {/* bg-gradient-to-b from-blue-50 */}
         <img 
         className="w-[15rem]"
         src={NETFLIX_LOGOURL} alt="Headerimg" />

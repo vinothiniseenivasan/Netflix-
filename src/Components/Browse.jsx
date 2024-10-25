@@ -1,6 +1,6 @@
 
 // import { useSearchParams } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 import useNowPlayingMovies from "../hooks/useNowPlayingMovies";
 import usePopMovies from "../hooks/usePopMovies";
 import useThirllerMovies from "../hooks/useThirllerMovies";
@@ -12,7 +12,7 @@ import MainContainer from "./MainContainer";
 import MovieCardInformation from "./MovieCardInformation";
 import SecondaryContainer from "./SecondaryContainer";
 import { useSelector } from "react-redux";
-import { useEffect, useState } from "react";
+// import {  useState } from "react";
 // import { useNavigate } from "react-router-dom";
 
 const Browse = () =>{
@@ -22,7 +22,7 @@ const Browse = () =>{
     useTrendingMovies();
     useThirllerMovies();
 
-    const [intial ,setIntial] = useState(false);
+    // const [intial ,setIntial] = useState(false);
 
 
     // we already add in reducer toggleGptSearchView regarding to that we are showing component
@@ -42,7 +42,7 @@ const Browse = () =>{
     // header is common
     //  showMovieTrailer means show each trailer video in  MovieCardInformation
     // otherwise go to browse page and gpt page
-      <div>
+      <div className="relative">
           
           <Header />
 

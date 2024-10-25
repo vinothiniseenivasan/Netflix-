@@ -5,7 +5,7 @@ import OpenAI from 'openai';
 import { OPEN_AI_KEY } from '../Utils/constant';
 import { options } from '../Utils/constant';
 import { addGptMovieResults, addGptMovieSuggestions } from '../Utils/gptSlice';
-import GptMovieRecommendation from './GptMovieRecommendation';
+// import GptMovieRecommendation from './GptMovieRecommendation';
 
 
 
@@ -109,10 +109,10 @@ const GptSearchBar = () => {
     // console.log("selectedLang" ,lang[selectedLang])
   return (
     <div className='flex flex-col w-full'>
-         <div className='flex justify-center relative z-18 '>
-                <form  className="w-1/2  pt-[10%]  " onSubmit={(e) =>{e.preventDefault()}}>
+         <div className='flex justify-center relative z-18  '>
+                <form  className=" w-full md:w-1/2 pt-[10%]" onSubmit={(e) =>{e.preventDefault()}}>
 
-                      <div className='bg-black grid grid-cols-12 mt-36'>
+                      <div className='bg-black grid grid-cols-12 mt-36 w-full'>
                                 {/* input */}
                       
                                 {/* depends upon languages we selected  we can get input  */}
@@ -125,7 +125,7 @@ const GptSearchBar = () => {
                                   {/* search btn */}
                                   <button
                                   onClick ={()=> handleSearchButton()}
-                                      className='px-4 py-2 rounded-lg text-white bg-red-600 col-span-3 m-4 hover:bg-green-600'>
+                                      className='px-4 py-2 w-[1/3] rounded-lg text-white bg-red-800 col-span-3 m-4 hover:bg-green-600'>
                                        {lang[selectedLang].search} 
                                   </button>
                       </div>
@@ -134,7 +134,7 @@ const GptSearchBar = () => {
         
       
          </div>
-          <GptMovieRecommendation className="bg-black "/>
+          {/* <GptMovieRecommendation className="bg-black "/> */}
     </div>
    
   )

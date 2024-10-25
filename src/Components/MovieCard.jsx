@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react';
 import { TMDB_CDN_URL } from '../Utils/constant';
 import { poster_image } from '../Utils/varietyposters';
-import useMovieTrailer from '../hooks/useMovieTrailer';
+// import useMovieTrailer from '../hooks/useMovieTrailer';
 import { useDispatch, useSelector } from 'react-redux';
 import VideoBackground from './VideoBackground';
 import { toggleMovieTrailer } from '../Utils/movieTrailerSlice';
@@ -10,17 +10,17 @@ import { addMovieTrailerId } from '../Utils/movieTrailerSlice';
 import { addMovieTitle } from '../Utils/movieTrailerSlice';
 import { addMovieOverview } from '../Utils/movieTrailerSlice';
 import { useNavigate } from 'react-router-dom';
-import showGptSearch from '../Utils/gptSlice';
+// import showGptSearch from '../Utils/gptSlice';
 
 const MovieCard = ({posterPath , movieId ,overview ,original_title }) => {
-  const ind = useRef(0);
+  // const ind = useRef(0);
 
   
 
   const [isEnlarge , setIsEnlarge] = useState(false);
-  const showGpt = useSelector((store) => store.gpt.showGptSearch);
+  // const showGpt = useSelector((store) => store.gpt.showGptSearch);
 
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const dispatch = useDispatch();
 
   // console.log("ind.current" ,ind.current)

@@ -1,6 +1,6 @@
-import React from 'react';
+// import React from 'react';
 import { useEffect } from "react";
-import { options, TMDB_API_OPTIONS } from "../Utils/constant";
+import { options } from "../Utils/constant";
 import { useDispatch } from "react-redux";
 import { addGetTrendingMovies } from "../Utils/movieSlice";
 import { useSelector } from 'react-redux';

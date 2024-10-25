@@ -7,7 +7,7 @@ const VideoTitle = ({title , overview}) => {
 
   
     // To handle fading effect
-   const [isFadingOut, setIsFadingOut] = useState(false);  
+  //  const [isFadingOut, setIsFadingOut] = useState(false);  
 
  
    const [showOverview, setShowOverview] = useState(true);

@@ -1,7 +1,7 @@
-import React from 'react';
+// import React from 'react';
 import { useEffect } from 'react';
 import { TMDB_API_OPTIONS } from '../Utils/constant';
-import { setDoc } from 'firebase/firestore/lite';
+// import { setDoc } from 'firebase/firestore/lite';
 
 import { useDispatch } from 'react-redux';
 import { addGetTrailerKey } from '../Utils/movieSlice';
