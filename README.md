@@ -8,7 +8,7 @@ This template provides a minimal setup to get React working in Vite with HMR (Ho
 - `@vitejs/plugin-react`: Uses Babel for Fast Refresh.
 - `@vitejs/plugin-react-swc`: Uses SWC for Fast Refresh.
 
-- 
+
 ## **Features**
 ### **Authentication**
 - **Login/Sign Up**: Allows users to register or log in with their credentials.
