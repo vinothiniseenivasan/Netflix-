@@ -173,7 +173,7 @@ const Header = () =>{
 
 
     return(
-       <div className="z-[17] md:absolute relative  w-screen sm:bg-blue-400   flex justify-between items-center p-3 mr-7  bg-gradient-to-b from-blue-50     flex-col md:flex-row  mx-auto md:mx-0" >   
+       <div className="z-[17] md:absolute relative  w-screen    flex justify-between items-center p-3 mr-7  bg-gradient-to-b from-blue-50     flex-col md:flex-row  mx-auto md:mx-0" >   
           {/* netflix logo img */}
           {/* flex-col md:flex-row"  small device : flex-col  md: device flex row */}
 

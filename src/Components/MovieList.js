@@ -8,7 +8,7 @@ const MovieList = ({movieListTitle , movies ,gpt}) => {
   return (
   
 
-<div className={`  w-full  text-white md:px-28 px-10   mb-8 relative z-[15]   ${   (gpt=== false)? "top-24 md:bottom-96" : "bottom-0"}
+<div className={`  w-full  text-white md:px-28 px-10   mb-8 relative z-[15]   ${   (gpt=== false)? "bottom-96" : "bottom-0"}
      ${   (gpt=== true)? "bg-black" : ""}  ${   (gpt=== true)? "py-4" : "py-2"   }  overflow-x-scroll `  }>
         {/* px-44 */}
         {/* it has title of journal  and eachmovie card */}
