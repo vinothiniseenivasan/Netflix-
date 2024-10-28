@@ -139,8 +139,8 @@ const Login = () => {
           // ...
            })
           .catch(  (error) => {
-            const errorCode = error.code;
-            const errorMessage = error.message;
+            // const errorCode = error.code;
+            // const errorMessage = error.message;
             setErrorMessage(true);
             
         });
@@ -156,7 +156,7 @@ const Login = () => {
   }
 
   return (
-    <div className="relative h-screen">
+    <div className="relative h-screen object-cover">
       <Header />
 
       <div className="h-full absolute top-0 left-0 w-full">
@@ -172,7 +172,7 @@ const Login = () => {
           e.preventDefault();
           //  e.target.reset();
         }}
-        className="absolute  bg-black top-1/4  left-[34%] bg-opacity-80 z-10 flex flex-col w-1/4 p-8 h-auto"
+        className="absolute  bg-black top-1/4 left:[20%] md:left-[34%] bg-opacity-80 z-10 flex flex-col w-full  md:w-1/4 p-8 h-auto"
       >
         <div className="text-white font-serif text-3xl tracking-wider p-2 mt-3">
           {isSignIn ? "Sign In" : "Sign Up"}

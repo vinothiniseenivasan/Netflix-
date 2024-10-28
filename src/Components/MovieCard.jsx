@@ -43,30 +43,31 @@ const MovieCard = ({posterPath , movieId ,overview ,original_title }) => {
   if (!posterPath) {
    
 
-   // Increment the reference value correctly
+  // default poster image
     return (
-      <div className='w-[15rem] h-[15rem]'>
+      <div className= ' w-11rem  md:w-[15rem]  h-[15rem]'>
         <img src={poster_image[3].img} alt="moviecard_img" />
       </div>
     );
   }
 
-  return (
-    <div>
 
-    
-    <div className={ `transition-all duration-300 ${isEnlarge ? 'w-[25rem] h-[25rem]' : 'w-[15rem] h-[15rem]'}`}
-    onClick={(event)=>{handleCard(event)}}
+
+  // w-[13rem] md:w-[15rem]
+     return ( <div className= "  w-[13rem] md:w-[15rem] h-[15rem]  flex-shrink-0 "
+    onClick={ (event)=>{handleCard(event)} }
     >
-       <img src={TMDB_CDN_URL+posterPath} alt="moviecard_img" />
+      {/* images of serach gpt movies */}
+       <img
+       className='w-[400px] h-[450px] object-cover hover:w-[800px] hover:h-[800px] hover:object-cover'
+        src={TMDB_CDN_URL+posterPath} alt="moviecard_img" />
 
-    </div>
+    </div>)
 
 
 
-    {/* {(isEnlarge ? <VideoBackground movieId={movieId} /> : " ")} */}
-    </div>
-  )
+   
+  
 }
 
 export default MovieCard

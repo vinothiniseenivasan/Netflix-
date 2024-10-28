@@ -38,7 +38,7 @@ const MainContainer = () => {
     }
   
   return (
-    <div className='relative'>
+    <div className='relative md:pt-0  pt-[30%]  md:bg-none bg-black'>
         {/* MainContainer */}
         {/* 2 => movie Trailer and Movie Title */}
         <VideoTitle    title = {original_title}    overview = {overview}  />

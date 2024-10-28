@@ -108,7 +108,7 @@ const GptSearchBar = () => {
 
     // console.log("selectedLang" ,lang[selectedLang])
   return (
-    <div className='flex flex-col w-full'>
+    <div className='flex flex-col w-auto  md:w-full  pt-[30%] md:pt-0 '>
          <div className='flex justify-center relative z-18  '>
                 <form  className=" w-full md:w-1/2 pt-[10%]" onSubmit={(e) =>{e.preventDefault()}}>
 
@@ -120,12 +120,12 @@ const GptSearchBar = () => {
                                       ref={inputValue}
                                       type="text"
                                       placeholder={lang[selectedLang].gptSearchBarPlaceHolder}
-                                      className="p-4 m-4 col-span-9"/>
+                                      className="p-4 m-4  col-span-7 md:col-span-9 "/>
                       
                                   {/* search btn */}
                                   <button
                                   onClick ={()=> handleSearchButton()}
-                                      className='px-4 py-2 w-[1/3] rounded-lg text-white bg-red-800 col-span-3 m-4 hover:bg-green-600'>
+                                      className='px-4 py-2 w-[1/3] rounded-lg text-white bg-red-800 col-span-5 md:col-span-3 m-4 hover:bg-green-600'>
                                        {lang[selectedLang].search} 
                                   </button>
                       </div>

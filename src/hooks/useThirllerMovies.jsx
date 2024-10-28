@@ -30,6 +30,7 @@ const useThirllerMovies = () => {
         // useMemoziation to avoid api call mulltiple times
 
        !thirllerMovies && getThirllerMovies();
+       // eslint-disable-next-line react-hooks/exhaustive-deps
     
     } , [])
 

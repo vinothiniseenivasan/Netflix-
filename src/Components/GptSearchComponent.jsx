@@ -20,7 +20,7 @@ const GptSearchComponent = () => {
         />
       </div>
 
-      <div className=' pt-[30%] md:pt-0'>
+      <div className=''>
       <GptSearchBar />       
       <GptMovieRecommendation className="bg-black "/>
       </div>
